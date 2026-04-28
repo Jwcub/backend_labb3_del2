@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function getJobs() {
     try {
-        const res = await fetch("https://backend-labb2.vercel.app/jobs");
+        const res = await fetch("https://backend-labb3.vercel.app/jobs");
         return await res.json();
 
     } catch(error) {
@@ -19,22 +19,30 @@ async function renderJobs() {
     let tableBody = document.querySelector("tbody");
     tableBody.innerHTML = "";
 
+    // Funktion för att omvandla tidsobjekt
+    function formatDate(dateString) {
+    if (!dateString) return "";
+    
+    const date = new Date(dateString);
+    return date.toLocaleDateString("sv-SE");
+    }
+
     // Skriver ut varje jobb, ett i taget
     jobs.forEach(job => {
         const tableRow = document.createElement("tr");
 
         let enddate = "";
-        if(job.enddate === null) {
+        if(job.endDate === null) {
             enddate = "Pågående"
         } else {
-            enddate = job.enddate;
+            enddate = formatDate(job.endDate);
         }
 
         tableRow.innerHTML = `
-            <td data-label="Företag">${job.companyname}</td>
-            <td data-label="Roll">${job.jobtitle}</td>
-            <td data-label="Ort">${job.joblocation}</td>
-            <td data-label="Började">${job.startdate}</td>
+            <td data-label="Företag">${job.companyName}</td>
+            <td data-label="Roll">${job.jobTitle}</td>
+            <td data-label="Ort">${job.location}</td>
+            <td data-label="Började">${formatDate(job.startDate)}</td>
             <td data-label="Slutade">${enddate}</td>
             <td data-label="Beskrivning" colspan="2">${job.description}</td>
         `;
