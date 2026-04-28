@@ -3,7 +3,6 @@ Denna webbplats är skapad för kursen Backend-baserad webbutveckling vid Mittun
 
 Webbplatsen använder webbtjänster för att läsa, lägga till samt radera information om arbetslivserfarenhet från en databas. Databasen hanteras med MongoDb Atlas. 
 
-
 **Webbplatsen uppfyller följande krav:**
 - Webbplatsen använder Fetch API för att hämta (GET), skicka data (POST) samt radera (DELETE) från och till webbtjänsten.
 - Datan valideras innan POST-anrop och tydliga meddelanden skrivs ut vid valideringsfel.
@@ -12,5 +11,6 @@ Webbplatsen använder webbtjänster för att läsa, lägga till samt radera info
 - Källkoden är publicerad till ett Github repository.
 - Det finns en README-fil som ger en beskrivning av din webbapplikation.
 
-**Publicerad vid:**
 
+**Publicerad vid:**
+https://backend-labb3-del2.vercel.app/ 
