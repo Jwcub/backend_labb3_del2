@@ -50,9 +50,9 @@ async function addWorkexperience(event) {
     }
 
     // Skicka värden till databas
-    const newJob = { companyname: companyValue, jobtitle: titleValue, joblocation: locationValue, startdate: startdateValue, enddate: enddateValue, description: descValue };
+    const newJob = { companyName: companyValue, jobTitle: titleValue, location: locationValue, startDate: startdateValue, endDate: enddateValue, description: descValue };
 
-    const result = await postNewJob("https://backend-labb2.vercel.app/jobs", newJob);
+    const result = await postNewJob("https://backend-labb3.vercel.app/jobs/", newJob);
 
     // Hantering av händelse efter skickat till databas
     if(result) {
@@ -65,7 +65,7 @@ async function addWorkexperience(event) {
 
         messageEl.innerHTML = `Jobb vid ${companyValue} tillagd`;
 
-        messageEl.innerHTML = `Jobb vid ${result.companyname} tillagd`;
+        messageEl.innerHTML = `Jobb vid ${result.companyName} tillagd`;
    
     } else {
         messageEl.innerHTML = "Något gick fel, försök igen.";

@@ -56,18 +56,19 @@ async function renderJobs() {
         tableRow.appendChild(deleteCell);
 
         deleteBtn.addEventListener("click", () => {
-            tableRow.remove;
-            deleteJobb(job.id) 
+            tableRow.remove();
+            deleteJobb(job._id) 
         });
 
         // Lägger till rad i DOM
         tableBody.appendChild(tableRow);
-
     });
 }
 
 async function deleteJobb(id) {
-    const url = "https://backend-labb2.vercel.app/jobs/" + id;
+    const url = "https://backend-labb3.vercel.app/jobs/" + id;
+    console.log(url);
+
     try {
         const response = await fetch(url, {
             method: 'DELETE',
@@ -75,11 +76,11 @@ async function deleteJobb(id) {
         if(!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        const result = await response.json;
+        const result = await response.json();
         if(!result) {
             console.log("Jobb kunde inte raderas")
         } else {
-            renderJobs()
+            // renderJobs()
         }
         
     } catch(error) {
