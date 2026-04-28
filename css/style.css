@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #832525;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+p {
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+
+    & ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        gap: 1em;
+        font-size: 0.85rem;
+    }
+
+    & li {
+        background-color: #2C3947;
+        padding: 10px 20px;
+        border-radius: 6px;
+    }
+
+    & li.active {
+        background-color: #832525;
+    }
+
+    & li:hover {
+        background-color: #832525;
+    }
+
+    & a {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.wrapper {
+    margin: 20px auto;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    padding: 30px 40px;
+    border-radius: 12px;
+}
+
+.presentation {
+    display: flex;
+    gap: 20px;
+}
+
+.pres-image {
+    flex-basis: 25%;
+}
+
+.profile-picture {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.pres-text {
+    flex-basis: 75%;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    overflow: hidden;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+table th,
+table td {
+    padding: 0.5em 1em;
+    text-align: left;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #e8e8e8;
+    padding: 1.3em 1em;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+}
+
+table td {
+    font-size: 0.8rem;
+}
+
+.delete-btn {
+    float: right;
+}
+
+#add-workexperience {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 15px;
+
+    & label {
+        font-weight: 500;
+    }
+
+    & input {
+        width: 100%;
+        padding: 8px 12px;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        font-size: 0.85em;
+    }
+
+    & .desc {
+        grid-column: span 3;
+    }
+
+    & textarea {
+        width: 100%;
+        padding: 8px 12px;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        font-size: 0.85em;
+    }
+
+    & button {
+        justify-self: start;
+        align-self: start;
+        padding: 12px 20px;
+        background-color: #2C3947;
+        color: #fff;
+        font-weight: 500;
+        border: 0;
+        border-radius: 6px;
+    }
+}
+
+#message {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 800px) {
+    .presentation {
+        flex-direction: column-reverse;
+    }
+
+    .pres-image {
+    display: flex;
+    justify-content: center;
+    }
+
+    .profile-picture {
+    max-width: 300px;
+    width: 80%;
+    height: auto;
+    border-radius: 6px;
+    }
+
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+  
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+  
+    table tr {
+        display: block;
+        margin-bottom: 1.625em;
+    }
+  
+    table td {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        border-bottom: 1px solid #ddd;
+        font-size: 0.9em;
+        
+    }
+  
+    table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    #add-workexperience {
+    grid-template-columns: 1fr;
+
+        & .desc {
+            grid-column: span 1;
+        }
+    }
+}
+
+
